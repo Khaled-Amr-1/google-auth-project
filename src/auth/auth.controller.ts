@@ -14,7 +14,7 @@ export class AuthController {
     const user = req.user;
     // Print user data and token
     res.json({
-      message: 'Google Authentication Successful',
+      message: 'Google Authentication Successfully',
       user: user,
       token: user.accessToken,
     });
