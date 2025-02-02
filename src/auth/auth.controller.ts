@@ -13,11 +13,10 @@ export class AuthController {
   googleAuthRedirect(@Req() req: Request, @Res() res: Response) {
     const user = req.user;
     // Print user data and token
-    res.send(`
-      <h1>Google Authentication Successful</h1>
-      <p><b>User Info:</b></p>
-      <pre>${JSON.stringify(user, null, 2)}</pre>
-      <p><b>Token:</b> ${user.accessToken}</p>
-    `);
+    res.json({
+      message: 'Google Authentication Successful',
+      user: user,
+      token: user.accessToken,
+    });
   }
 }
